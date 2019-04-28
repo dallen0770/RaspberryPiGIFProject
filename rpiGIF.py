@@ -20,6 +20,15 @@ def messageSending(): #Sends a message through the gmail server
     #Take a burst of picture for the gif
     #Save pictures
     #https://picamera.readthedocs.io/en/release-1.13/recipes1.html
+#def pickfilter():
+    from picamera import PiCamera 
+    from time import sleep 
+    camera = PiCamera()
+    camera.image_effect = 'negative' 
+    camera.start_preview(alpha=192)
+    sleep(5)
+    camera.capture("/home/pi/image.jpg")
+    camera.stop_preview()
 
 #def makegif():
     #Compile pictures into a gif
